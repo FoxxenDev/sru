@@ -8,13 +8,13 @@
     <title>Gestion S.R.U</title>
 
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
     <!-- Custom style -->
-    <link rel="stylesheet" href="dist/css/custom.css">
+    <link rel="stylesheet" href="/dist/css/custom.css">
     <!--Icone navigateur-->
-    <link rel="icon" href="dist/img/logo.ico">
+    <link rel="icon" href="/dist/img/logo.ico">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -60,13 +60,13 @@
             </li>
             <li class="nav-item dropdown user-menu">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="dist/img/user8-128x128.jpg" class="user-image img-circle elevation-2" alt="User Image">
+                    <img src="/dist/img/user8-128x128.jpg" class="user-image img-circle elevation-2" alt="User Image">
                     <span class="d-none d-md-inline">Taylor Williams</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                     <!-- User image -->
                     <li class="user-header bg-cyan">
-                        <img src="dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
 
                         <p>
                             Taylor Williams - Administrateur
@@ -91,7 +91,7 @@
     <aside class="main-sidebar sidebar-dark-darkred elevation-4">
         <!-- Brand Logo -->
         <a href="" class="brand-link navbar-darkred">
-            <img src="dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-2">
+            <img src="/dist/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-2">
             <span class="brand-text font-weight-light">S.R.U</span>
         </a>
 
@@ -100,7 +100,7 @@
             <!-- Sidebar user panel (optional) -->
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                    <img src="/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
                     <a href="#" class="d-block">Taylor Williams</a>
@@ -193,3 +193,28 @@
         <!-- Main content -->
         <div class="content">
             <div class="container-fluid">
+                <?= $content ?>
+            </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <!-- Main Footer -->
+    <footer class="main-footer">
+        <!-- Default to the left -->
+        <strong>Copyright &copy; 2019 Taylor Williams.</strong> Tous droits réservés.
+    </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/adminlte.min.js"></script>
+</body>
+</html>
