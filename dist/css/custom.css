@@ -1,0 +1,14 @@
+.navbar-darkred{
+    background-color: #b51b16;
+}
+
+.sidebar-dark-darkred .nav-sidebar > .nav-item > .nav-link.active{
+    background-color: #b51b16;
+}
+
+.divide{
+    margin-top: 10px!important;
+    margin-bottom: 10px!important;
+    border: 0!important;
+    border-top: 1px solid #eee!important;
+}
