@@ -56,12 +56,20 @@ class Router
         return $this->router->generate($name, $params);
     }
 
+    public function getRoutes()
+    {
+        return $this->router->getRoutes();
+    }
+
     public function run(): self
     {
         $match = $this->router->match();
         $views = $match['target'];
         $params = $match['params'];
         $router = $this;
+
+        $flash = FlashMessage::getFlash() ? json_encode(FlashMessage::getFlash()) : "undefined";
+        FlashMessage::removeFlash();
         ob_start();
         require $this->viewPath . DIRECTORY_SEPARATOR . $views . ".php";
         $content = ob_get_clean();

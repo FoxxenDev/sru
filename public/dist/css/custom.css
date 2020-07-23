@@ -12,3 +12,7 @@
     border: 0!important;
     border-top: 1px solid #eee!important;
 }
+
+.swal2-top-end{
+    top: 70px!important;
+}

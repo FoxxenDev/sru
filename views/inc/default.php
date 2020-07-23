@@ -7,6 +7,8 @@
 
     <title>Gestion S.R.U</title>
 
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="/plugins/sweetalert2/sweetalert2.min.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
@@ -19,8 +21,8 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini">
-<div class="wrapper">
 
+<div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-darkred navbar-dark">
         <!-- Left navbar links -->
@@ -78,8 +80,8 @@
                     </li>
                     <!-- Menu Footer-->
                     <li class="user-footer">
-                        <a href="profile.php" class="btn btn-primary btn-flat">Profile</a>
-                        <a href="logout.php" class="btn btn-danger btn-flat float-right">Se déconnecter</a>
+                        <a href="<?= $router->url("profil") ?>" class="btn btn-primary btn-flat">Profile</a>
+                        <a href="<?= $router->url("logout") ?>" class="btn btn-danger btn-flat float-right">Se déconnecter</a>
                     </li>
                 </ul>
             </li>
@@ -112,6 +114,12 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
+                    <li class="nav-item">
+                        <a href="<?= $router->url("home") ?>" class="nav-link">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>Accueil</p>
+                        </a>
+                    </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-user-md"></i>
@@ -158,7 +166,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a href="dev.php" class="nav-link">
+                        <a href="<?= $router->url("dev") ?>" class="nav-link">
                             <i class="nav-icon fas fa-wrench"></i>
                             <p>Dev</p>
                         </a>
@@ -170,22 +178,17 @@
         <!-- /.sidebar -->
     </aside>
 
+    <div class="ribbon-wrapper ribbon-xl" style="top: auto!important;right: 0;">
+        <div class="ribbon bg-danger text-xl">
+            En dev
+        </div>
+    </div>
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">Starter Page</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item active">Starter Page</li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
+
             </div><!-- /.container-fluid -->
         </div>
         <!-- /.content-header -->
@@ -203,18 +206,26 @@
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2019 Taylor Williams.</strong> Tous droits réservés.
+        <strong>Copyright &copy; 2019 Taylor Williams.</strong> Tous droits réservés. | Page générée en <?= round(1000 * (microtime(true) - DEBUG_TIME)) ?> ms
     </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
+<script type="text/javascript">
+    var alertJson = <?= $flash ?>
+</script>
+
+<!-- SweetAlert2 -->
+<script src="/plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- jQuery -->
 <script src="/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="/dist/js/adminlte.min.js"></script>
+<!-- Custom JS -->
+<script src="/dist/js/main.js"></script>
 </body>
 </html>

@@ -1,20 +1,22 @@
 <?php
 
 use App\Router;
+use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run;
 
 require("../vendor/autoload.php");
 
 define("DEBUG_TIME", microtime(true));
 
-$whoops = new \Whoops\Run;
-$whoops->prependHandler(new \Whoops\Handler\PrettyPageHandler);
+$whoops = new Run;
+$whoops->prependHandler(new PrettyPageHandler);
 $whoops->register();
-
-$router = new AltoRouter();
 
 $router = new Router(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'views');
 $router
     ->get('/', 'index', 'home')
-    ->match('/blog/[*:slug]-[i:id]', 'blog', 'blog')
-    ->get('/blog/category', 'category', 'category')
+    ->get('/dev', 'dev', 'dev')
+    ->get('/logout', 'logout', 'logout')
+    ->get('/profil', 'profil', 'profil')
+    ->get('/test', 'test', 'test')
     ->run();
